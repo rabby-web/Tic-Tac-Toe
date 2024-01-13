@@ -11,7 +11,7 @@ function Square({ value, onSquareClick }) {
   );
 }
 
-function App() {
+function Board() {
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [xIsNext, setXIsNext] = useState(true);
 
@@ -57,9 +57,19 @@ function App() {
     </>
   );
 }
-
-export default App;
-
+export default function App() {
+  return (
+    <>
+      <div>
+        <Board></Board>
+      </div>
+      {/* history */}
+      <div>
+        <h2>List</h2>
+      </div>
+    </>
+  );
+}
 function calculateWinner(squares) {
   const lines = [
     [0, 1, 2],
